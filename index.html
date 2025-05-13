@@ -21,7 +21,20 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        h1, h2, h3, h4 { /* Added h4 here */
+        /* Style for the logo container to center the image */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px; /* Add some space below the logo */
+        }
+        /* Style for the logo image */
+        .logo-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Optional: make the logo round */
+            /* Add a fallback for the image in case it doesn't load */
+            onerror="this.onerror=null; this.src='https://placehold.co/150x150/cccccc/333333?text=Logo';"
+        }
+        h1, h2, h3, h4 {
             color: #0056b3;
             margin-bottom: 15px;
         }
@@ -40,11 +53,11 @@
             font-size: 1.5em;
             margin-top: 20px;
         }
-        h4 { /* Style for the new h4 title */
+        h4 {
             font-size: 1.2em;
-            margin-top: 15px; /* Add some space above */
-            margin-bottom: 10px; /* Add some space below */
-            color: #007bff; /* A slightly different color */
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #007bff;
         }
         ul {
             list-style-type: disc;
@@ -63,16 +76,16 @@
         .qr-codes {
             display: flex;
             justify-content: center;
-            gap: 30px; /* Space between QR codes */
+            gap: 30px;
             margin-top: 20px;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            flex-wrap: wrap;
         }
         .qr-code-item {
             text-align: center;
         }
         .qr-code-item img {
-            width: 150px; /* Adjust size as needed */
-            height: 150px; /* Adjust size as needed */
+            width: 150px;
+            height: 150px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
@@ -80,6 +93,10 @@
 </head>
 <body>
     <div class="container">
+        <div class="logo-container">
+            <img src="logo-s.jpg" alt="世界經絡量化學會聯合會 Logo">
+        </div>
+
         <h1>世界經絡量化學會聯合會</h1>
         <p class="subtitle">World Federation of Meridian Metrology Society(WFMMS)</p>
 
