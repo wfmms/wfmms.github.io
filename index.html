@@ -21,17 +21,30 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        /* Style for the logo container to center the image */
-        .logo-container {
-            text-align: center; /* Center the content horizontally */
-            margin-bottom: 20px; /* Add some space below the logo */
+        /* New container for logo and titles */
+        .header-container {
+            display: flex; /* Use Flexbox */
+            align-items: center; /* Vertically align items in the center */
+            margin-bottom: 20px; /* Add space below the entire header block */
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            justify-content: center; /* Center items horizontally on smaller screens */
         }
-        /* Style for the logo image - removed border-radius: 50% */
+        /* Style for the logo container */
+        .logo-container {
+            margin-right: 20px; /* Add space to the right of the logo */
+            /* Removed text-align: center as flexbox handles alignment */
+        }
+        /* Style for the logo image */
         .logo-container img {
             width: 150px;
             height: 150px;
             /* Add a fallback for the image in case it doesn't load */
             onerror="this.onerror=null; this.src='https://placehold.co/150x150/cccccc/333333?text=Logo';"
+        }
+        /* Container for the titles */
+        .titles-container {
+            flex-grow: 1; /* Allow titles to take up remaining space */
+            text-align: center; /* Center titles within their container */
         }
         h1, h2, h3, h4 {
             color: #0056b3;
@@ -39,8 +52,7 @@
         }
         h1 {
             font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 5px; /* Reduce margin below h1 */
         }
         h2 {
             font-size: 2em;
@@ -67,10 +79,9 @@
             margin-bottom: 8px;
         }
         .subtitle {
-            text-align: center;
             font-size: 1.2em;
             color: #555;
-            margin-bottom: 30px;
+            margin-bottom: 0; /* Remove margin below subtitle */
         }
         .qr-codes {
             display: flex;
@@ -88,16 +99,34 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column; /* Stack items vertically on small screens */
+            }
+            .logo-container {
+                margin-right: 0; /* Remove right margin on small screens */
+                margin-bottom: 10px; /* Add bottom margin below logo */
+            }
+            .titles-container {
+                text-align: center; /* Ensure titles are centered when stacked */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo-container">
-            <img src="logo-s.jpg" alt="世界經絡量化學會聯合會 Logo">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo-s.jpg" alt="世界經絡量化學會聯合會 Logo">
+            </div>
+            <div class="titles-container">
+                <h1>世界經絡量化學會聯合會</h1>
+                <p class="subtitle">World Federation of Meridian Metrology Society(WFMMS)</p>
+            </div>
         </div>
 
-        <h1>世界經絡量化學會聯合會</h1>
-        <p class="subtitle">World Federation of Meridian Metrology Society(WFMMS)</p>
 
         <h2>一、組織概況</h2>
         <p>世界經絡量化學會聯合會（WFMMS）是一個致力於經絡醫學的量化與標準化研究的國際性非政府組織 (INGO)，成立於2025年，總部位於中國香港，旨在解決經絡治療中普遍存在的經驗依賴性強、缺乏生理參數依據、體質與環境干擾、療效評估模糊等問題，透過脈象與體質分型、節氣適應性調整、生物電檢測、AI輔助決策等量化技術的研究與應用，實現經絡治療的方案制定、穴位選擇、操作手法、操作時間的可量化、可重複、標準化。</p>
@@ -105,7 +134,7 @@
         <h2>二、主要宗旨</h2>
         <ul>
             <li><strong>推動量化研究：</strong>鼓勵並支持對經絡治療中的關鍵要素（如穴位選擇、刺激強度、操作時長）進行量化研究，尋找客觀依據。</li>
-            <li><li><strong>建立標準化共識：</strong>匯集全球專家的智慧，共同探討和制定經絡治療的標準化流程和指南。</li>
+            <li><li><strong>建立標準化共識：：</strong>匯集全球專家的智慧，共同探討和制定經絡治療的標準化流程和指南。</li>
             <li><strong>促進可重複實踐：</strong>推廣量化和標準化的方法，幫助不同醫師在臨床實踐中實現更穩定、可重複的治療效果。</li>
         </ul>
 
